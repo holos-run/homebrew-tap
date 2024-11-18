@@ -5,15 +5,15 @@
 class Holos < Formula
   desc "Holos CLI"
   homepage "https://holos.run"
-  version "0.99.2"
+  version "0.99.3"
 
   depends_on "helm" => :optional
   depends_on "kubectl" => :optional
 
   on_macos do
     on_intel do
-      url "https://github.com/holos-run/holos/releases/download/v0.99.2/holos_Darwin_x86_64.tar.gz"
-      sha256 "bdececaf38c37b02a81d8971323baf8688f0216efb0b3f43ba08907439cbc15b"
+      url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Darwin_x86_64.tar.gz"
+      sha256 "94830a01a0453efc74a1b7723cb56fb96964c5a7902463a235278f1eb66dcdc1"
 
       def install
         bin.install "holos"
@@ -26,8 +26,8 @@ class Holos < Formula
       end
     end
     on_arm do
-      url "https://github.com/holos-run/holos/releases/download/v0.99.2/holos_Darwin_arm64.tar.gz"
-      sha256 "09c6d070c97fae48ca19067d8d03799839ea072f41e638143773ea2f3a03358e"
+      url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Darwin_arm64.tar.gz"
+      sha256 "4a73575e7b34d6146e8f4b758c7ad6af2992f6ca1b10f366cf476e361c2e0619"
 
       def install
         bin.install "holos"
@@ -44,8 +44,8 @@ class Holos < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.99.2/holos_Linux_x86_64.tar.gz"
-        sha256 "4196f9cb92eab505011d06f94cd5b8dade26bb1c6ef9a1078a8f5cfcd4815e6a"
+        url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Linux_x86_64.tar.gz"
+        sha256 "319a072d9456b9badee82778d8e1e8e2b06b585d524581e8c075132090021760"
 
         def install
           bin.install "holos"
@@ -60,8 +60,8 @@ class Holos < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.99.2/holos_Linux_arm64.tar.gz"
-        sha256 "062205013e487071331d5b8545855ea259af9850f6b6725516d84d362408664b"
+        url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Linux_arm64.tar.gz"
+        sha256 "bf5638267ccfb27889ff791c7a87f20df4785a27a948fdf0a85b66c293200c75"
 
         def install
           bin.install "holos"
@@ -77,6 +77,6 @@ class Holos < Formula
   end
 
   test do
-    system "#{bin}/holos version"
+    system "#{bin}/holos --version"
   end
 end
