@@ -5,15 +5,15 @@
 class Holos < Formula
   desc "Holos CLI"
   homepage "https://holos.run"
-  version "0.99.3"
+  version "0.100.0"
 
   depends_on "helm" => :optional
   depends_on "kubectl" => :optional
 
   on_macos do
     on_intel do
-      url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Darwin_x86_64.tar.gz"
-      sha256 "94830a01a0453efc74a1b7723cb56fb96964c5a7902463a235278f1eb66dcdc1"
+      url "https://github.com/holos-run/holos/releases/download/v0.100.0/holos_Darwin_x86_64.tar.gz"
+      sha256 "ec234bf02f40c23dfc778f8f0094787a332f7caad3496c1598a4477a3aa6a72f"
 
       def install
         bin.install "holos"
@@ -26,8 +26,8 @@ class Holos < Formula
       end
     end
     on_arm do
-      url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Darwin_arm64.tar.gz"
-      sha256 "4a73575e7b34d6146e8f4b758c7ad6af2992f6ca1b10f366cf476e361c2e0619"
+      url "https://github.com/holos-run/holos/releases/download/v0.100.0/holos_Darwin_arm64.tar.gz"
+      sha256 "1ce3ecfce2e2bd02097968a99801b69e839a5685b305dfa9ee947c77f9965816"
 
       def install
         bin.install "holos"
@@ -44,8 +44,8 @@ class Holos < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Linux_x86_64.tar.gz"
-        sha256 "319a072d9456b9badee82778d8e1e8e2b06b585d524581e8c075132090021760"
+        url "https://github.com/holos-run/holos/releases/download/v0.100.0/holos_Linux_x86_64.tar.gz"
+        sha256 "02689e0b8fa1739ab63e79b5c1ec9a715b4ce658b4d63ab47d25966003af7496"
 
         def install
           bin.install "holos"
@@ -60,8 +60,8 @@ class Holos < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.99.3/holos_Linux_arm64.tar.gz"
-        sha256 "bf5638267ccfb27889ff791c7a87f20df4785a27a948fdf0a85b66c293200c75"
+        url "https://github.com/holos-run/holos/releases/download/v0.100.0/holos_Linux_arm64.tar.gz"
+        sha256 "d0a2e3668daac4d792617c3c1e33f6d79a98343280af8558eecde685e10b04c0"
 
         def install
           bin.install "holos"
