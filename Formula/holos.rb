@@ -5,15 +5,15 @@
 class Holos < Formula
   desc "Holos CLI"
   homepage "https://holos.run"
-  version "0.101.1"
+  version "0.101.2"
 
   depends_on "helm" => :optional
   depends_on "kubectl" => :optional
 
   on_macos do
     on_intel do
-      url "https://github.com/holos-run/holos/releases/download/v0.101.1/holos_Darwin_x86_64.tar.gz"
-      sha256 "f002f0eaef983f8543a608f9ec32428a2ee1d1b61290a8a265ce2f1790b4cc7c"
+      url "https://github.com/holos-run/holos/releases/download/v0.101.2/holos_Darwin_x86_64.tar.gz"
+      sha256 "e1129223fbbb7ae89d9640ac98b1b71583d16e00de53e337c101cb5e52bf774f"
 
       def install
         bin.install "holos"
@@ -26,8 +26,8 @@ class Holos < Formula
       end
     end
     on_arm do
-      url "https://github.com/holos-run/holos/releases/download/v0.101.1/holos_Darwin_arm64.tar.gz"
-      sha256 "6cd7c5ce802c84903630a8701e90e38a0d6514e29ce03f51041a903c8ba4c222"
+      url "https://github.com/holos-run/holos/releases/download/v0.101.2/holos_Darwin_arm64.tar.gz"
+      sha256 "6b443c49e97b9c43638398492f6acbe18c71e961fb6ca4ce968cb6ce97cf7db6"
 
       def install
         bin.install "holos"
@@ -44,8 +44,8 @@ class Holos < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.101.1/holos_Linux_x86_64.tar.gz"
-        sha256 "df55b61c6f13a875693d70bc5dbc87febe6ad676939b1bd025308c8980a666cb"
+        url "https://github.com/holos-run/holos/releases/download/v0.101.2/holos_Linux_x86_64.tar.gz"
+        sha256 "ba7d2ea54b3fbb8a8050e6dc7fae6134135c53818c3e8ab731f7dec3cf34007d"
 
         def install
           bin.install "holos"
@@ -60,8 +60,8 @@ class Holos < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.101.1/holos_Linux_arm64.tar.gz"
-        sha256 "fda45b2ed31dc98ca0b7920d515c7e46db007ac2606aa713d8fddb248c587c3f"
+        url "https://github.com/holos-run/holos/releases/download/v0.101.2/holos_Linux_arm64.tar.gz"
+        sha256 "a903cb73a6a0f06645da449290ccca38e4ac99ff7e51bd9814628cc3aef6559f"
 
         def install
           bin.install "holos"
