@@ -5,15 +5,15 @@
 class Holos < Formula
   desc "Holos CLI"
   homepage "https://holos.run"
-  version "0.102.0"
+  version "0.102.1"
 
   depends_on "helm" => :optional
   depends_on "kubectl" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/holos-run/holos/releases/download/v0.102.0/holos_Darwin_x86_64.tar.gz"
-      sha256 "2470f62c344e870496e83547a9e3d46522d81a43bda375f211397980e46f6ec5"
+      url "https://github.com/holos-run/holos/releases/download/v0.102.1/holos_Darwin_x86_64.tar.gz"
+      sha256 "e49bca892558fce8aa45a9ee57a4a9ad091c3eb5590ef9823f65411db4f05382"
 
       def install
         bin.install "holos"
@@ -26,8 +26,8 @@ class Holos < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/holos-run/holos/releases/download/v0.102.0/holos_Darwin_arm64.tar.gz"
-      sha256 "f98e2ec048c16cddca69a1083049644f4c4bbc486fc60a46c49fae4fc02bbe52"
+      url "https://github.com/holos-run/holos/releases/download/v0.102.1/holos_Darwin_arm64.tar.gz"
+      sha256 "34541ba312f1a010497fb9214467e5805b5cf5846e20e160b3acd3dc9c46d1c9"
 
       def install
         bin.install "holos"
@@ -44,8 +44,8 @@ class Holos < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.102.0/holos_Linux_x86_64.tar.gz"
-        sha256 "0921834e2def793b1f69f931124eb3638cbd4fb8f3652d0ed16ef2fadb629fde"
+        url "https://github.com/holos-run/holos/releases/download/v0.102.1/holos_Linux_x86_64.tar.gz"
+        sha256 "35125883bbb31cb6a19ce2af113bf783ebea6f8aa5a1341f7d044e9993f54f04"
 
         def install
           bin.install "holos"
@@ -60,8 +60,8 @@ class Holos < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.102.0/holos_Linux_arm64.tar.gz"
-        sha256 "35067a675b44e9acaedd5f0376bb5b6e70532dd417d03426c9c3afac0db93f02"
+        url "https://github.com/holos-run/holos/releases/download/v0.102.1/holos_Linux_arm64.tar.gz"
+        sha256 "b2d9f52dc6369fbb82ebbcc394d22832d37a93f64e3f882e9f6c5402c1b29ca9"
 
         def install
           bin.install "holos"
