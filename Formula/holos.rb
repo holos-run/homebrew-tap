@@ -5,15 +5,15 @@
 class Holos < Formula
   desc "Holos CLI"
   homepage "https://holos.run"
-  version "0.104.1"
+  version "0.104.2"
 
   depends_on "helm" => :optional
   depends_on "kubectl" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/holos-run/holos/releases/download/v0.104.1/holos_Darwin_x86_64.tar.gz"
-      sha256 "713b6b1852ae8991a9344d95ffb4fae9996c71ea82b141f561ebb84a48a150d6"
+      url "https://github.com/holos-run/holos/releases/download/v0.104.2/holos_Darwin_x86_64.tar.gz"
+      sha256 "5007c91e47c17a243412a694c4d1fde4dede8ad4ed7242764b718b0e42118543"
 
       def install
         bin.install "holos"
@@ -26,8 +26,8 @@ class Holos < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/holos-run/holos/releases/download/v0.104.1/holos_Darwin_arm64.tar.gz"
-      sha256 "aad763a2bd7dca54d1bc129f9d05212c9e565d7103213579d46f1a55501d4fb1"
+      url "https://github.com/holos-run/holos/releases/download/v0.104.2/holos_Darwin_arm64.tar.gz"
+      sha256 "020df32ced5c420a2be53552af2e84561d894bbb5260648a1d3340b3ad2843b1"
 
       def install
         bin.install "holos"
@@ -42,36 +42,30 @@ class Holos < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.104.1/holos_Linux_x86_64.tar.gz"
-        sha256 "df4eefcd228f09b1cbaca9d1a652e7eea451dcff95245772f46b131159a56f20"
-
-        def install
-          bin.install "holos"
-          bash_output = Utils.safe_popen_read(bin/"holos", "completion", "bash")
-          (bash_completion/"holos").write bash_output
-          zsh_output = Utils.safe_popen_read(bin/"holos", "completion", "zsh")
-          (zsh_completion/"_holos").write zsh_output
-          fish_output = Utils.safe_popen_read(bin/"holos", "completion", "fish")
-          (fish_completion/"holos.fish").write fish_output
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/holos-run/holos/releases/download/v0.104.2/holos_Linux_x86_64.tar.gz"
+      sha256 "dba8a839f4a596fbd92556d9586918cfc95324cac54a9f0ba1354327e8b2b1eb"
+      def install
+        bin.install "holos"
+        bash_output = Utils.safe_popen_read(bin/"holos", "completion", "bash")
+        (bash_completion/"holos").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"holos", "completion", "zsh")
+        (zsh_completion/"_holos").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"holos", "completion", "fish")
+        (fish_completion/"holos.fish").write fish_output
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/holos-run/holos/releases/download/v0.104.1/holos_Linux_arm64.tar.gz"
-        sha256 "4faa327aa266e724334037857410659fa4498978ec7fd5f35e355b9499bd05a2"
-
-        def install
-          bin.install "holos"
-          bash_output = Utils.safe_popen_read(bin/"holos", "completion", "bash")
-          (bash_completion/"holos").write bash_output
-          zsh_output = Utils.safe_popen_read(bin/"holos", "completion", "zsh")
-          (zsh_completion/"_holos").write zsh_output
-          fish_output = Utils.safe_popen_read(bin/"holos", "completion", "fish")
-          (fish_completion/"holos.fish").write fish_output
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/holos-run/holos/releases/download/v0.104.2/holos_Linux_arm64.tar.gz"
+      sha256 "cf6417ba081aa77346775bfa11e319d9f3690474bf9f7ae2b8808092cb53de5f"
+      def install
+        bin.install "holos"
+        bash_output = Utils.safe_popen_read(bin/"holos", "completion", "bash")
+        (bash_completion/"holos").write bash_output
+        zsh_output = Utils.safe_popen_read(bin/"holos", "completion", "zsh")
+        (zsh_completion/"_holos").write zsh_output
+        fish_output = Utils.safe_popen_read(bin/"holos", "completion", "fish")
+        (fish_completion/"holos.fish").write fish_output
       end
     end
   end
